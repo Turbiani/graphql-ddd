@@ -1,0 +1,39 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "A repo to show example uses from GraphQL and DDD",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Turbiani/graphql-ddd.git"
+  },
+  "keywords": [
+    "graphql;",
+    "nodejs;",
+    "javascript;",
+    "ddd"
+  ],
+  "author": "Turbiani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Turbiani/graphql-ddd/issues"
+  },
+  "homepage": "https://github.com/Turbiani/graphql-ddd#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.16.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
