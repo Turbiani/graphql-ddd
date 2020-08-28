@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-express');
 const {
   CreateAuthor,
   GetAuthor,
-} = require('../../use-cases/admin');
+} = require('../../application/admin');
 
 const typeDefs = gql`
   """Object Type that represents a Author"""

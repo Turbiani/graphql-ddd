@@ -2,7 +2,7 @@ const { gql } = require('apollo-server-express');
 
 const {
   AddBookComment,
-} = require('../../use-cases/readers');
+} = require('../../application/readers');
 
 const typeDefs = gql`
   """Object Type that represents a Comment"""

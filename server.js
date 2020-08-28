@@ -5,16 +5,13 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 
 // GRAPHQL SCHEMA
-const { typeDefs, resolvers } = require('./src/api');
-
-console.log('typeDefs', typeDefs);
-console.log('resolvers', resolvers);
+const { typeDefs, resolvers } = require('./src/interface');
 
 // DATABASE OPEN CONNECTION
 require('./src/infrastructure/connection')();
 
 // MODEL DEPENDENCIES
-const entities = require('./src/entities');
+const entities = require('./src/domain');
 
 // GRAPHQL START
 const apolloServer = new ApolloServer({

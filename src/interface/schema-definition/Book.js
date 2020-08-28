@@ -5,7 +5,7 @@ const {
   CreateBook,
   GetBooks,
   GetBook,
-} = require('../../use-cases/librarian');
+} = require('../../application/librarian');
 
 const typeDefs = gql`
   """Object Type that represents a Book"""

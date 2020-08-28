@@ -28,10 +28,6 @@ const RootTypes = gql`
   }
 `;
 
-console.log('RootTypes', RootTypes);
-console.log('authorTypeDefs', authorTypeDefs);
-console.log('commentTypeDefs', commentTypeDefs);
-
 module.exports = {
   typeDefs: [
     RootTypes,
