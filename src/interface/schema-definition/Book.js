@@ -2,6 +2,7 @@ const { gql } = require('apollo-server-express');
 
 const {
   UpdateBookTitle,
+  GetBookComments,
   CreateBook,
   GetAuthor,
   GetBooks,
@@ -58,6 +59,11 @@ const resolvers = {
         args,
         context,
       ) => GetAuthor(context, { id: parent.author }),
+      comments: (
+        parent,
+        args,
+        context,
+      ) => GetBookComments(context, { id: parent.id }),
     },
   },
   Query: {

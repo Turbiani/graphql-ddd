@@ -9,14 +9,16 @@ const typeDefs = gql`
   type Comment {
     id: ID!
     name: String!
-    email: String!
-    books: [Book!]!
+    email: String
+    text: String!
+    book: Book!
   }
 
   input CommentInput {
     name: String!
-    email: String!
-    books: [ID!]!
+    email: String
+    text: String!
+    book: ID!
   }
 
   extend type Mutation {
