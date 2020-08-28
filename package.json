@@ -27,6 +27,7 @@
   "dependencies": {
     "apollo-server-express": "^2.16.1",
     "express": "^4.17.1",
+    "graphql-depth-limit": "^1.1.0",
     "mongoose": "^5.10.1"
   },
   "devDependencies": {

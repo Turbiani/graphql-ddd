@@ -4,6 +4,10 @@ const {
   AddBookComment,
 } = require('../../application/readers');
 
+const {
+  GetBook,
+} = require('../../application/librarian');
+
 const typeDefs = gql`
   """Object Type that represents a Comment"""
   type Comment {
@@ -33,6 +37,11 @@ const resolvers = {
   Type: {
     Comment: {
       id: (parent) => parent._id,
+      book: (
+        parent,
+        args,
+        context,
+      ) => GetBook(context, { id: parent.book }),
     },
   },
   Query: {},
