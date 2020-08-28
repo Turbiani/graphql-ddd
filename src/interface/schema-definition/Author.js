@@ -17,7 +17,6 @@ const typeDefs = gql`
   input AuthorInput {
     name: String!
     email: String!
-    books: [ID!]!
   }
 
   extend type Query {
@@ -37,23 +36,22 @@ const typeDefs = gql`
 const resolvers = {
   Type: {
     Author: {
-      id: (root) => root._id,
-      books: (root) => root._id,
+      id: (parent) => parent._id,
     },
   },
   Query: {
     author: (
-      root,
-      data,
+      parent,
+      args,
       context,
-    ) => GetAuthor(context, data),
+    ) => GetAuthor(context, args),
   },
   Mutation: {
     createAuthor: (
-      root,
-      data,
+      parent,
+      args,
       context,
-    ) => CreateAuthor(context, data),
+    ) => CreateAuthor(context, args),
   },
 };
 

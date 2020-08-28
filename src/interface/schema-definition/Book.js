@@ -3,6 +3,7 @@ const { gql } = require('apollo-server-express');
 const {
   UpdateBookTitle,
   CreateBook,
+  GetAuthor,
   GetBooks,
   GetBook,
 } = require('../../application/librarian');
@@ -51,33 +52,37 @@ const typeDefs = gql`
 const resolvers = {
   Type: {
     Book: {
-      id: (root) => root._id,
-      author: (root) => root._id,
+      id: (parent) => parent._id,
+      author: (
+        parent,
+        args,
+        context,
+      ) => GetAuthor(context, { id: parent.author }),
     },
   },
   Query: {
     book: (
-      root,
-      data,
+      parent,
+      args,
       context,
-    ) => GetBook(context, data),
+    ) => GetBook(context, args),
     books: (
-      root,
-      data,
+      parent,
+      args,
       context,
-    ) => GetBooks(context, data),
+    ) => GetBooks(context, args),
   },
   Mutation: {
     createBook: (
-      root,
-      data,
+      parent,
+      args,
       context,
-    ) => CreateBook(context, data),
+    ) => CreateBook(context, args),
     updateBookTitle: (
-      root,
-      data,
+      parent,
+      args,
       context,
-    ) => UpdateBookTitle(context, data),
+    ) => UpdateBookTitle(context, args),
   },
 };
 

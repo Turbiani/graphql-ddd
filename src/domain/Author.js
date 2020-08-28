@@ -2,10 +2,8 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const authorSchema = new Schema({
-  title: { type: String, required: true },
-  isbn: { type: String, required: true },
-  description: { type: String, required: false },
-  author: { type: Schema.Types.ObjectId, ref: 'authors' },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
   active: { type: Boolean, default: true },
 }, { timestamps: true });
 

@@ -1,5 +1,5 @@
 module.exports = {
-  AuhorEntity: require('./Author'),
   BookEntity: require('./Book'),
+  AuthorEntity: require('./Author'),
   CommentEntity: require('./Comment'),
 };

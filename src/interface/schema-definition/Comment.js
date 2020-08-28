@@ -30,17 +30,16 @@ const typeDefs = gql`
 const resolvers = {
   Type: {
     Comment: {
-      id: (root) => root._id,
-      books: (root) => root._id,
+      id: (parent) => parent._id,
     },
   },
   Query: {},
   Mutation: {
     addBookComment: (
-      root,
-      data,
+      parent,
+      args,
       context,
-    ) => AddBookComment(context, data),
+    ) => AddBookComment(context, args),
   },
 };
 

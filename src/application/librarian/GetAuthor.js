@@ -6,5 +6,5 @@ module.exports = (injection, params) => {
   } = Object.assign({}, injection);
 
   const repository = new AuthorRepository(AuthorEntity);
-  return repository.create(params.author);
+  return repository.findOne(params.id);
 };
